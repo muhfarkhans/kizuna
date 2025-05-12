@@ -1,0 +1,15 @@
+# Node modules
+/node_modules/
+
+# WhatsApp-web.js session data
+.wwebjs_auth/
+.wwebjs_cache/
+
+# Environment variables
+.env
+
+# Log file
+log.txt
+
+# Optional: OS files
+.DS_Store
