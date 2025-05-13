@@ -42,23 +42,23 @@ client.on("message", async (message) => {
 
     const reply = await askOpenAI(prompt);
     await message.reply(reply);
-  }
-
-  if (chat.isGroup) {
-    console.log(
-      `📨 Pesan dari grup "${chat.name}" oleh ${message.author}: ${text}`
-    );
-
-    if (text === "ping") {
-      await message.reply("🏓 Hai");
-    }
   } else {
-    console.log(`📨 Pesan dari ${message.from}: ${text}`);
+    if (chat.isGroup) {
+      console.log(
+        `📨 Pesan dari grup "${chat.name}" oleh ${message.author}: ${text}`
+      );
 
-    if (text === "ping") {
-      await message.reply("🏓 Oi");
+      if (text === "ping") {
+        await message.reply("Hai");
+      }
     } else {
-      await message.reply("Hai! Ini balasan dari chat pribadi.");
+      console.log(`📨 Pesan dari ${message.from}: ${text}`);
+
+      if (text === "ping") {
+        await message.reply("Oi");
+      } else {
+        await message.reply("Nande");
+      }
     }
   }
 });
